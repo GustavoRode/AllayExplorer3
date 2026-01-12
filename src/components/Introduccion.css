@@ -1,0 +1,7 @@
+.intro-container { min-height: calc(100vh - 200px); }
+.intro-container h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 10px; }
+.intro-container .lead { font-size: 1.1rem; color: #555; max-width: 900px; margin: 0 auto 20px; }
+.intro-container ul { list-style: none; padding-left: 0; }
+.intro-container ul li { margin-bottom: 10px; }
+.intro-container .small { color: #777; }
+@media (max-width: 768px) { .intro-container h1 { font-size: 1.7rem; } }

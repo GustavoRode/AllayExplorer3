@@ -37,7 +37,10 @@ const Header = () => {
           <Nav className="ms-auto align-items-center">
             <Nav.Link as={Link} to="/marketplace" className="me-3">Marketplace</Nav.Link>
             <Nav.Link as={Link} to="/como-funciona" className="me-3">Cómo funciona</Nav.Link>
-            <Nav.Link as={Link} to="/aprender" className="me-3">Aprender</Nav.Link>
+            <NavDropdown title="Aprender" id="aprender-dropdown" align="end" className="me-3">
+              <NavDropdown.Item as={Link} to="/educacion">Educación</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/preguntas-frecuentes">Preguntas frecuentes</NavDropdown.Item>
+            </NavDropdown>
             <NavDropdown title="Equipo" id="team-dropdown" align="end" className="me-3">
               <NavDropdown.Item as={Link} to="/sobre-nosotros">Sobre nosotros</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/empleos">Empleos</NavDropdown.Item>

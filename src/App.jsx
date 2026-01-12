@@ -10,6 +10,7 @@ import CarritoComponent from './components/Carrito';
 import CrudProductos from './components/CrudProductos';
 import Marketplace from './components/Marketplace';
 import ComoFunciona from './components/ComoFunciona';
+import PorQueFunciona from './components/PorQueFunciona';
 import Aprender from './components/Aprender';
 import SobreNosotros from './components/SobreNosotros';
 import Empleos from './components/Empleos';
@@ -20,6 +21,10 @@ import ProductListV2 from './components/ProductListV2';
 import Verificacion from './components/Verificacion';
 import DetallesCuenta from './components/DetallesCuenta';
 import Logout from './components/Logout';
+import Educacion from './components/Educacion';
+import PreguntasFrecuentes from './components/PreguntasFrecuentes';
+import Introduccion from './components/Introduccion';
+import Tutorial from './components/Tutorial';
 import { Helmet } from "react-helmet";
 
 
@@ -57,7 +62,13 @@ function App() {
           <Route path="/crud" element={<CrudProductos />} />
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/como-funciona" element={<ComoFunciona />} />
+          <Route path="/por-que-funciona" element={<PorQueFunciona />} />
+          <Route path="/porquefunciona" element={<PorQueFunciona />} />
           <Route path="/aprender" element={<Aprender />} />
+          <Route path="/educacion" element={<Educacion />} />
+          <Route path="/educacion/introduccion" element={<Introduccion />} />
+          <Route path="/educacion/tutorial" element={<Tutorial />} />
+          <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
           <Route path="/sobre-nosotros" element={<SobreNosotros />} />
           <Route path="/empleos" element={<Empleos />} />
           <Route path="/blog" element={<Blog />} />

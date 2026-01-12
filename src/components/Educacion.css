@@ -1,0 +1,114 @@
+.educacion-container {
+  min-height: calc(100vh - 200px);
+}
+
+.educacion-header {
+  padding: 40px 0;
+}
+
+.educacion-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.educacion-header .lead {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.educacion-card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.educacion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.educacion-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.educacion-card .btn {
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.concept-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.concept-card:hover {
+  border-color: #0056b3;
+  box-shadow: 0 5px 15px rgba(0, 86, 179, 0.15) !important;
+}
+
+.concept-card h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.concept-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-links .btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+/* FAQ highlights */
+.faq-highlights h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.faq-highlights ul {
+  padding-left: 18px;
+}
+
+.faq-highlights a {
+  color: #0b5cff;
+  text-decoration: none;
+}
+
+.faq-highlights a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .educacion-header h1 {
+    font-size: 2rem;
+  }
+
+  .educacion-header .lead {
+    font-size: 1rem;
+  }
+
+  .concept-card h5 {
+    font-size: 1.1rem;
+  }
+}
