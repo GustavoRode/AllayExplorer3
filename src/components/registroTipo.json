@@ -1,0 +1,14 @@
+  {
+    "title": "3521 Highwood",
+    "description": "DALLAS, TX - USA",
+    "price": 0,
+    "image": "https://res.cloudinary.com/dwvi0c49z/image/upload/v1767810345/8213-faith-ln-front-flat-1-500x400_armkua.jpg",
+    "stock": 1,
+    "category": "deals",
+    "Status": "Limited Release",
+    "expectedIncome": "2.42%",
+    "tokenPrice": 50.99,
+    "assetClassId": "EQSF",
+    "assetClassDes": "EQUITY - SINGLE FAMILY",
+    "id": "1"
+  }

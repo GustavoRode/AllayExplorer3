@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CustomBreadcrumb from './CustomBreadcrumb';
 import { Container, Row, Col, Form, InputGroup, Button, Spinner } from 'react-bootstrap';
 import ProductCardV2 from './ProductCardV2';
 import './ProductV2.css';
@@ -40,6 +41,7 @@ const ProductListV2 = () => {
 
   return (
     <Container className="py-5">
+      <CustomBreadcrumb />
       <Row>
         <Col lg={3} className="mb-4">
           <div className="sticky-sidebar">

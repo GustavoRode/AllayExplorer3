@@ -1,8 +1,8 @@
 /* Product V2 styles (inspirado en RealT buy-tokens) */
 .product-card-v2 {
   border: none;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(12, 25, 50, 0.08);
+  border-radius: 2px;
+  box-shadow: 0 4px 16px rgba(12, 25, 50, 0.16), 0 1.5px 4px rgba(12, 25, 50, 0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;

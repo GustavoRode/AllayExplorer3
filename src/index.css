@@ -157,6 +157,13 @@ button:focus-visible {
   padding-top: calc(var(--topbar-height) + var(--main-navbar-height));
 }
 
+/* Logo brand overlapping top-bar and navbar */
+.navbar-brand-logo {
+  position: relative !important;
+  margin-top: calc(var(--topbar-height) * -0.5) !important;
+  z-index: 1101 !important;
+}
+
 /* Mobile: make top-bar compact and ensure fixed behavior */
 @media (max-width: 576px) {
   :root {
