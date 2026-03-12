@@ -10,8 +10,14 @@
 
 .product-card-v2 .card-media {
   position: relative;
-  height: 180px;
+  height: 165px;
   overflow: hidden;
+}
+
+@media (min-width: 576px) {
+  .product-card-v2 .card-media {
+    height: 198px;
+  }
 }
 
 .product-card-v2 .card-media .card-img {
@@ -43,6 +49,15 @@
 
 .product-card-v2 .product-title {
   font-size: 1.05rem;
+}
+
+@media (max-width: 575px) {
+  .product-card-v2 .product-title {
+    font-size: 0.9rem;
+  }
+  .product-card-v2 {
+    border-radius: 4px;
+  }
 }
 
 .sticky-sidebar {

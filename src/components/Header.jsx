@@ -1,60 +1,117 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Button, NavDropdown } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Header = () => {
-  // Fixed positioning and sizing of header elements is handled by CSS (`src/index.css`).
-  // Removed runtime debugging and inline style forcing now that CSS rules are authoritative.
+  const [showMenu, setShowMenu] = useState(false);
+  
+  const handleClose = () => setShowMenu(false);
+  const handleShow = () => setShowMenu(true);
 
 
   return (
     <>
       {/* Barra superior con enlaces a la derecha */}
       <div className="top-bar bg-primary text-white position-relative" style={{ minHeight: '42px' }}>
-        <Container className="d-flex justify-content-end align-items-center gap-2 position-relative" style={{ fontSize: '0.95rem' }}>
-          {/* Logo superpuesto */}
-          <img
-            src={`${import.meta.env.BASE_URL}Allay_logo1.jpeg`} alt="Logo"
-            style={{ position: 'absolute', left: 0, top: '-1px', zIndex: 2, maxWidth: '82px', height: 'auto', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
-          />
-          {/* Iconos de redes sociales */}
-          <a href="https://wa.me/541168854910" className="text-white" style={{ fontSize: '1rem' }} target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: '1.1em' }} /> 11-6885-4910
-          </a>
-          <a href="mailto:allay.gluten.free@gmail.com" className="text-white" style={{ fontSize: '1rem' }}>
-            <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: '1.1em' }} />
-          </a>
-          <a href="https://www.instagram.com/allay_singluten?igsh=eGVkNng0OTg4MGty" target="_blank" rel="noopener noreferrer" className="text-white" style={{ fontSize: '1rem' }}>
-            <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '1.1em' }} />
-          </a>
-        </Container>
+        <div className="d-flex align-items-center w-100" style={{ fontSize: '0.9rem', minHeight: '42px', paddingTop: '8px', paddingBottom: '8px', paddingLeft: '12px', paddingRight: '20px' }}>
+          {/* Hamburger Menu - Solo en mobile */}
+          <div className="d-md-none">
+            <button 
+              onClick={handleShow}
+              style={{ 
+                background: 'none', 
+                border: 'none', 
+                cursor: 'pointer',
+                fontSize: '1.8rem',
+                color: '#fff',
+                padding: '0',
+                display: 'flex',
+                alignItems: 'center'
+              }}
+              title="Abrir menú"
+            >
+              <FontAwesomeIcon icon={faBars} style={{ color: '#fff' }} />
+            </button>
+          </div>
+
+          {/* Iconos de redes sociales - pushidos a la derecha */}
+          <div className="d-flex gap-2 gap-md-3 align-items-center ms-auto">
+            <a href="https://wa.me/541168854910" className="text-white d-none d-sm-inline-flex align-items-center gap-1" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', whiteSpace: 'nowrap' }}>
+              <FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: '1em' }} />
+              <span>11-6885-4910</span>
+            </a>
+            <a href="https://wa.me/541168854910" className="text-white d-sm-none" title="WhatsApp" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: '1.2em' }} />
+            </a>
+            <a href="mailto:allay.gluten.free@gmail.com" className="text-white" title="Email">
+              <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: '1.1em' }} />
+            </a>
+            <a href="https://www.instagram.com/allay_singluten?igsh=eGVkNng0OTg4MGty" target="_blank" rel="noopener noreferrer" className="text-white" title="Instagram">
+              <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '1.1em' }} />
+            </a>
+          </div>
+        </div>
       </div>
 
-      <Navbar bg="dark" variant="dark" expand="lg" className="mb-4 main-navbar" style={{ minHeight: '63px' }}>
-        <Container style={{ fontSize: '0.91rem', fontFamily: 'inherit' }}>       
-          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center navbar-brand-logo">
-            {/* Logo ahora está en el top-bar, no aquí */}
-            {/*<span>Tienda de café</span>*/}
-          </Navbar.Brand>
-
-          <Nav className="ms-auto align-items-center">
-            <Nav.Link as={Link} to="/pages/nuestra-empresa" className="me-3">EMPRESA</Nav.Link>
-            <Nav.Link as={Link} to="/productos" className="me-3">PRODUCTOS</Nav.Link>
-            {/* <Nav.Link as={Link} to="/blog" className="me-3">NOVEDADES</Nav.Link> */}
-            <Nav.Link as={Link} to="/vida-sin-gluten" className="me-3">VIDA SIN GLUTEN</Nav.Link>
-            <Nav.Link as={Link} to="/contacto" className="me-3">CONTACTO</Nav.Link>
-            
-            
-
-            {/* <Button variant="primary" as={Link} to="/comenzar" className="ms-3"> */}
-              {/* COMENZAR
-            </Button> */}
-          </Nav>
-        </Container>
-      </Navbar>
+      {/* Mobile Menu Overlay */}
+      {showMenu && (
+        <>
+          <div 
+            className="position-fixed top-0 start-0 w-100 h-100" 
+            style={{ backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 999 }}
+            onClick={handleClose}
+          />
+          <div 
+            className="position-fixed top-0 start-0 bg-dark" 
+            style={{ width: '250px', height: '100vh', zIndex: 1000, overflowY: 'auto' }}
+          >
+            <div className="d-flex justify-content-between align-items-center p-3 border-bottom border-secondary">
+              <span className="text-white fw-bold">Menú</span>
+              <Button 
+                variant="dark" 
+                onClick={handleClose}
+                className="p-0 border-0"
+                style={{ fontSize: '1.5rem' }}
+              >
+                <FontAwesomeIcon icon={faTimes} className="text-white" />
+              </Button>
+            </div>
+            <div className="d-flex flex-column">
+              <Link 
+                to="/pages/nuestra-empresa" 
+                className="text-white text-decoration-none p-3 border-bottom border-secondary"
+                onClick={handleClose}
+              >
+                EMPRESA
+              </Link>
+              <Link 
+                to="/productos" 
+                className="text-white text-decoration-none p-3 border-bottom border-secondary"
+                onClick={handleClose}
+              >
+                PRODUCTOS
+              </Link>
+              <Link 
+                to="/vida-sin-gluten" 
+                className="text-white text-decoration-none p-3 border-bottom border-secondary"
+                onClick={handleClose}
+              >
+                VIDA SIN GLUTEN
+              </Link>
+              <Link 
+                to="/contacto" 
+                className="text-white text-decoration-none p-3"
+                onClick={handleClose}
+              >
+                CONTACTO
+              </Link>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

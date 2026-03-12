@@ -30,7 +30,7 @@ const Product_List_v01 = () => {
   const sorted = products;
 
   return (
-    <Container className="py-5">
+    <Container className="py-5 px-0 px-md-4" fluid>
       <Row>
         <Col lg={9}>
           <div className="d-flex justify-content-between align-items-center mb-3"></div>
@@ -41,7 +41,7 @@ const Product_List_v01 = () => {
             <div className="text-center py-5"><Spinner animation="border" /></div>
           ) : null}
           {!loading && !error && (
-            <Row xs={1} sm={2} md={2} lg={3} className="g-4">
+            <Row xs={2} sm={2} md={2} lg={3} className="g-2">
               {sorted.map(product => {
                 try {
                   return (

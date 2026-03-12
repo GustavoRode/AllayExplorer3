@@ -64,7 +64,7 @@ function App() {
       <main className="site-content">
         <Routes>
           <Route path="/administracion" element={<Login />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Productos />} />
           <Route path="/deals" element={<Deals />} />
           <Route path="/essentials" element={<Essentials />} />
           <Route path="/crud" element={<CrudProductos />} />
