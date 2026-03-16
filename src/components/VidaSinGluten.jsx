@@ -20,10 +20,6 @@ const tips = [
     title: 'Contaminación cruzada',
     text: 'Evita la contaminación cruzada usando utensilios y superficies limpias. No mezcles alimentos sin gluten con otros que sí lo contienen.'
   },
-  // {
-  //   title: 'Recetas sin gluten',
-  //   text: 'Explora recetas fáciles y deliciosas para una vida sin gluten: panes, tortas, galletas y más. ¡Comer rico y seguro es posible!'
-  // },
   {
     title: 'Tips para comer afuera',
     text: 'Al comer afuera, asegúrate de pedir opciones sin gluten o que no hayan sido contaminadas. Busca restaurantes que ofrezcan menús sin gluten o que puedan adaptar platos.'
@@ -53,10 +49,12 @@ const VidaSinGluten = () => {
   }, []);
   return (
     <Container className="py-5">
-      <CustomBreadcrumb />
-      <h1 className="mb-4 text-center">Vida Sin Gluten</h1>
+      {/* <CustomBreadcrumb /> */}
+      {/* <h2 style={{ marginTop: '40px', marginBottom: '34px' }}>Contacto</h2> */}
+      <h2 style={{ marginTop: '40px', marginBottom: '34px' }}>Vida sin Gluten</h2>
+      {/* <h1 className="mb-4 text-center">Vida Sin Gluten</h1> */}
       <p className="lead text-center mb-5">
-        Consejos, información y recetas para quienes eligen o necesitan una alimentación libre de gluten.
+        Consejos e información para quienes eligen o necesitan una alimentación libre de gluten.
       </p>
       <Row className="g-4 mb-5">
         {tips.map((tip, idx) => (

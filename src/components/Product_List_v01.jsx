@@ -41,7 +41,7 @@ const Product_List_v01 = () => {
             <div className="text-center py-5"><Spinner animation="border" /></div>
           ) : null}
           {!loading && !error && (
-            <Row xs={2} sm={2} md={2} lg={3} className="g-2">
+            <Row xs={2} sm={2} md={2} lg={4} className="g-2">
               {sorted.map(product => {
                 try {
                   return (

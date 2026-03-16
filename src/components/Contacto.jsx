@@ -39,7 +39,8 @@ const Contacto = () => {
 
   return (
     <Container className="py-5" style={{ maxWidth: 600 }}>
-      <h2 className="mb-4 text-center">Contacto</h2>
+      {/* <h2 className="mb-4 text-center">Contacto</h2> */}
+      <h2 style={{ marginTop: '40px', marginBottom: '34px' }}>Contacto</h2>
       {enviado && <Alert variant="success">¡Mensaje enviado correctamente!</Alert>}
       {error && <Alert variant="danger">{error}</Alert>}
       <Form onSubmit={handleSubmit}>

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import logoGrisino from '../../images/Logo-Grisino-WEB.webp';
+import logoAllay from '../../images/Logo-Allay-WEB.webp';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,10 +17,10 @@ const Header = () => {
   return (
     <>
       {/* Barra superior con enlaces a la derecha */}
-      <div className="top-bar bg-primary text-white position-relative" style={{ minHeight: '42px' }}>
-        <div className="d-flex align-items-center w-100" style={{ fontSize: '0.9rem', minHeight: '42px', paddingTop: '8px', paddingBottom: '8px', paddingLeft: '12px', paddingRight: '20px' }}>
-          {/* Hamburger Menu - Solo en mobile */}
-          <div className="d-md-none">
+      <div className="top-bar bg-primary text-white position-fixed w-100" style={{ minHeight: '52px', top: 0, left: 0, zIndex: 1050 }}>
+        <div className="d-flex align-items-center w-100 position-relative" style={{ fontSize: '0.9rem', minHeight: '52px', paddingTop: '8px', paddingBottom: '8px', paddingLeft: '12px', paddingRight: '20px' }}>
+          {/* Hamburger Menu - visible siempre */}
+          <div>
             <button 
               onClick={handleShow}
               style={{ 
@@ -35,6 +37,15 @@ const Header = () => {
             >
               <FontAwesomeIcon icon={faBars} style={{ color: '#fff' }} />
             </button>
+          </div>
+
+          {/* Logo centrado */}
+          <div className="flex-grow-1 d-flex justify-content-center">
+            <img 
+              src={logoAllay} 
+              alt="Logo Allay" 
+              style={{ height: '36px', maxWidth: '180px', objectFit: 'contain' }}
+            />
           </div>
 
           {/* Iconos de redes sociales - pushidos a la derecha */}

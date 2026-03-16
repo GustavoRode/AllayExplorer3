@@ -10,7 +10,7 @@ const Productos = () => {
       }, []);
   return (
     <Container className="productos-container">
-      <h2>Productos</h2>
+      <h2 style={{ marginTop: '40px', marginBottom: '-34px' }}>Productos</h2>
       <Product_List_v01 />
     </Container>
   );
