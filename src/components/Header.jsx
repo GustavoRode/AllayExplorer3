@@ -17,8 +17,8 @@ const Header = () => {
   return (
     <>
       {/* Barra superior con enlaces a la derecha */}
-      <div className="top-bar bg-primary text-white position-fixed w-100" style={{ minHeight: '52px', top: 0, left: 0, zIndex: 1050 }}>
-        <div className="d-flex align-items-center w-100 position-relative" style={{ fontSize: '0.9rem', minHeight: '52px', paddingTop: '8px', paddingBottom: '8px', paddingLeft: '12px', paddingRight: '20px' }}>
+      <div className="top-bar custom-navbar position-fixed w-100">
+        <div className="d-flex align-items-center w-100 position-relative navbar-inner">
           {/* Hamburger Menu - visible siempre */}
           <div>
             <button 
@@ -28,39 +28,39 @@ const Header = () => {
                 border: 'none', 
                 cursor: 'pointer',
                 fontSize: '1.8rem',
-                color: '#fff',
+                color: '#333',
                 padding: '0',
                 display: 'flex',
                 alignItems: 'center'
               }}
               title="Abrir menú"
             >
-              <FontAwesomeIcon icon={faBars} style={{ color: '#fff' }} />
+              <FontAwesomeIcon icon={faBars} style={{ color: '#333' }} />
             </button>
           </div>
 
           {/* Logo centrado */}
-          <div className="flex-grow-1 d-flex justify-content-center">
+          <div className="flex-grow-1 d-flex justify-content-center navbar-logo-container">
             <img 
               src={logoAllay} 
               alt="Logo Allay" 
-              style={{ height: '36px', maxWidth: '180px', objectFit: 'contain' }}
+              className="navbar-logo"
             />
           </div>
 
           {/* Iconos de redes sociales - pushidos a la derecha */}
-          <div className="d-flex gap-2 gap-md-3 align-items-center ms-auto">
-            <a href="https://wa.me/541168854910" className="text-white d-none d-sm-inline-flex align-items-center gap-1" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85rem', whiteSpace: 'nowrap' }}>
+          <div className="d-flex gap-2 gap-md-3 align-items-center ms-auto navbar-links">
+            <a href="https://wa.me/541168854910" className="navbar-link d-none d-sm-inline-flex align-items-center gap-1" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: '1em' }} />
               <span>11-6885-4910</span>
             </a>
-            <a href="https://wa.me/541168854910" className="text-white d-sm-none" title="WhatsApp" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/541168854910" className="navbar-link d-sm-none" title="WhatsApp" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: '1.2em' }} />
             </a>
-            <a href="mailto:allay.gluten.free@gmail.com" className="text-white" title="Email">
+            <a href="mailto:allay.gluten.free@gmail.com" className="navbar-link" title="Email">
               <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: '1.1em' }} />
             </a>
-            <a href="https://www.instagram.com/allay_singluten?igsh=eGVkNng0OTg4MGty" target="_blank" rel="noopener noreferrer" className="text-white" title="Instagram">
+            <a href="https://www.instagram.com/allay_singluten?igsh=eGVkNng0OTg4MGty" target="_blank" rel="noopener noreferrer" className="navbar-link" title="Instagram">
               <FontAwesomeIcon icon={faInstagram} style={{ fontSize: '1.1em' }} />
             </a>
           </div>

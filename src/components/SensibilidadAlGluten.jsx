@@ -1,14 +1,19 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const SensibilidadAlGluten = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
   return (
     <Container className="py-4" style={{ marginTop: '80px' }}>
+      <div className="d-flex align-items-center mb-3" style={{ marginTop: '60px' }}>
+        <Button variant="outline-secondary" size="sm" onClick={() => navigate(-1)}>
+          &#8592; Volver
+        </Button>
+      </div>
       <Row>
         <Col md={8} className="mx-auto">
           <h2 style={{ wordBreak: 'keep-all', whiteSpace: 'normal', fontSize: '2rem' }}>

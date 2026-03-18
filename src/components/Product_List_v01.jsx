@@ -12,10 +12,16 @@ const Product_List_v01 = () => {
     let mounted = true;
     const url = 'https://69aedb7dc8b37f499836bf53.mockapi.io/catalog';
     fetch(url)
-      .then((r) => r.json())
-      .then((data) => {
-        if (!mounted) return;
-        setProducts(data);
+      .then(async (response) => {
+        const text = await response.text();
+        console.log('API response:', text);
+        try {
+          const data = JSON.parse(text);
+          if (!mounted) return;
+          setProducts(data);
+        } catch (e) {
+          setError('Respuesta inválida de la API.');
+        }
         setLoading(false);
       })
       .catch((e) => {

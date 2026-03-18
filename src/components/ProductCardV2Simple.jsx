@@ -10,7 +10,7 @@ const ProductCardV2Simple = ({ product }) => {
   return (
     <Card className="product-card-v2 h-100">
       <div className="card-media">
-        <img src={product.image} alt={product.title} className="card-img img-fluid" />
+          <img src={product.image} alt={product.title} className="card-img img-fluid product-img-marco" />
       </div>
       <Card.Body className="d-flex flex-column">
         <div className="d-flex justify-content-between align-items-start mb-2">

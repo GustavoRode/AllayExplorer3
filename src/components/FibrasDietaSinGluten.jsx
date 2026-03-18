@@ -1,14 +1,20 @@
 
-import React from 'react';
-import { Container } from 'react-bootstrap';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Container, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const FibrasDietaSinGluten = () => {
+    const navigate = useNavigate();
     useEffect(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
     return (
   <Container className="py-5">
+    <div className="d-flex align-items-center mb-3" style={{ marginTop: '60px' }}>
+      <Button variant="outline-secondary" size="sm" onClick={() => navigate(-1)}>
+        &#8592; Volver
+      </Button>
+    </div>
     <h1 className="mb-4 text-center">Fibras y una dieta sin gluten</h1>
     <p>
       Una dieta sin gluten puede ser saludable y equilibrada, pero es importante prestar atención al consumo de fibra, ya que muchos productos sin gluten industriales suelen tener menos fibra que sus equivalentes con gluten. La fibra es fundamental para la salud digestiva y el bienestar general.
@@ -36,11 +42,11 @@ const FibrasDietaSinGluten = () => {
     <p className="mt-4">
       Recuerda que una dieta sin gluten no tiene por qué ser baja en fibra. Con una buena selección de alimentos naturales y variados, puedes cubrir tus necesidades nutricionales y disfrutar de una alimentación saludable.
     </p>
-    <div className="mt-4 text-center">
+    {/* <div className="mt-4 text-center">
       <a href="https://santamariaproductos.com.ar/vida-sin-gluten/fibras-y-una-dieta-sin-gluten/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
         Más información sobre fibras y dieta sin gluten
       </a>
-    </div>
+    </div> */}
   </Container>
 )};
 

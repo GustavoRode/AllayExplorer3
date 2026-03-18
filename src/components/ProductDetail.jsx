@@ -2,11 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Spinner, Image, Button, Breadcrumb } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 import './ProductV2.css';
 
 // Componente funcional ProductDetail
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [gallery, setGallery] = useState([]);
   const [galleryLoading, setGalleryLoading] = useState(true);
@@ -56,21 +59,33 @@ const ProductDetail = () => {
   }
 
   return (
-    <Container className="py-4">
-      <Breadcrumb className="productos-breadcrumb mb-3">
-        <Breadcrumb.Item href={import.meta.env.BASE_URL}>Inicio</Breadcrumb.Item>
-        <Breadcrumb.Item href={`${import.meta.env.BASE_URL}productos`}>Productos</Breadcrumb.Item>
-        <Breadcrumb.Item active>Detalle</Breadcrumb.Item>
-      </Breadcrumb>
+    <>
+      <Header />
+      <Container className="py-4">
+      <nav aria-label="breadcrumb" className="mb-3" style={{ marginTop: '60px' }}>
+        <ol className="breadcrumb productos-breadcrumb mb-0 d-flex align-items-center custom-breadcrumb">
+          <li className="breadcrumb-item volver-item">
+            <a href="#" onClick={e => { e.preventDefault(); navigate(-1); }} className="volver-link">
+              &#8592; Volver
+            </a>
+          </li>
+          {/* <span className="breadcrumb-separator volver-separator">|</span>
+          <li className="breadcrumb-item"><a href={import.meta.env.BASE_URL}>Inicio</a></li>
+          <span className="breadcrumb-separator">&gt;</span>
+          <li className="breadcrumb-item"><a href={`${import.meta.env.BASE_URL}productos`}>Productos</a></li>
+          <span className="breadcrumb-separator">&gt;</span>
+          <li className="breadcrumb-item active" aria-current="page">Detalle</li> */}
+        </ol>
+      </nav>
       <Row className="justify-content-center">
         <Col md={10}>
-          <div className="d-flex flex-row gap-4 align-items-start" style={{ border: 'none', background: 'none', borderRadius: '1.5rem' }}>
+          <div className="d-flex flex-row gap-4 align-items-start product-detail-main-row" style={{ border: 'none', background: 'none', borderRadius: '1.5rem', minHeight: 308 }}>
             {/* Imagen y carrusel */}
-            <div style={{ minWidth: 320, maxWidth: 400, flex: '0 0 auto' }}>
+            <div className="product-detail-img-col" style={{ minWidth: 320, maxWidth: 400, flex: '0 0 auto', minHeight: 308, display: 'flex', alignItems: 'flex-start' }}>
               {galleryLoading ? (
-                <div className="text-center py-3"><Spinner animation="border" size="sm" /></div>
+                <div className="text-center py-3" style={{ minHeight: 308 }}><Spinner animation="border" size="sm" /></div>
               ) : gallery.length > 0 ? (
-                <div id="gallery-carrusel" className="mb-3 position-relative" style={{ minHeight: 308, overflow: 'hidden' }}
+                <div id="gallery-carrusel" className="position-relative" style={{ minHeight: 308, overflow: 'hidden', marginBottom: 0 }}
                   onTouchStart={e => (window._touchStartX = e.touches[0].clientX)}
                   onTouchEnd={e => {
                     const diff = e.changedTouches[0].clientX - (window._touchStartX || 0);
@@ -130,7 +145,7 @@ const ProductDetail = () => {
               ) : null}
             </div>
             {/* Detalle a la derecha */}
-            <div className="flex-grow-1" style={{ border: 'none', background: 'none' }}>
+            <div className="flex-grow-1 product-detail-info-col" style={{ border: 'none', background: 'none', minHeight: 308, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', paddingTop: '18px' }}>
               <h3 className="mb-3">{product.title}</h3>
               <div className="mb-2 text-muted">{product.description}</div>
               <ul className="list-unstyled mb-3">
@@ -150,7 +165,8 @@ const ProductDetail = () => {
           </div>
         </Col>
       </Row>
-    </Container>
+      </Container>
+    </>
   );
 };
 

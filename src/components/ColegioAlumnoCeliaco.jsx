@@ -1,13 +1,19 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Container, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const ColegioAlumnoCeliaco = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
   return (
   <Container className="py-5">
+    <div className="d-flex align-items-center mb-3" style={{ marginTop: '60px' }}>
+      <Button variant="outline-secondary" size="sm" onClick={() => navigate(-1)}>
+        &#8592; Volver
+      </Button>
+    </div>
     <h1 className="mb-4 text-center">¿Cómo actuar en el colegio con un niño celíaco?</h1>
     <p>
       Cuando un niño celíaco asiste al colegio, es fundamental que toda la comunidad educativa esté informada y comprometida para garantizar su bienestar y seguridad alimentaria. Aquí tienes algunos consejos y pautas para actuar correctamente:
@@ -37,11 +43,11 @@ const ColegioAlumnoCeliaco = () => {
     <p className="mt-4">
       Con información, empatía y organización, el colegio puede ser un espacio seguro y feliz para los niños celíacos.
     </p>
-    <div className="mt-4 text-center">
+    {/* <div className="mt-4 text-center">
       <a href="https://santamariaproductos.com.ar/vida-sin-gluten/como-actuar-en-el-colegio-con-un-nino-celiaco/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
         Más información sobre celiaquía en el colegio
       </a>
-    </div>
+    </div> */}
   </Container>
 )};
 
