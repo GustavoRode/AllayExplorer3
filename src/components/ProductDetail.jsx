@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Row, Col, Spinner, Image, Button, Breadcrumb } from 'react-bootstrap';
+import { Container, Row, Col, Spinner, Button, Breadcrumb } from 'react-bootstrap';
+import ProductImage from './ProductImage';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import './ProductV2.css';
@@ -96,7 +97,12 @@ const ProductDetail = () => {
                   }}
                 >
                   <div className="d-flex align-items-center" style={{ minHeight: 308 }}>
-                    <Image src={gallery[activeIdx].foto || gallery[activeIdx].image} alt={gallery[activeIdx].descripcion || product.title} fluid style={{ maxHeight: 308, objectFit: 'contain', transition: 'opacity 0.3s', marginLeft: 0, background: 'none', border: 'none', boxShadow: 'none' }} className="ms-0" />
+                    <ProductImage
+                      src={gallery[activeIdx].foto || gallery[activeIdx].image}
+                      alt={gallery[activeIdx].descripcion || product.title}
+                      style={{ maxHeight: 308, objectFit: 'contain', marginLeft: 0, background: 'none', border: 'none', boxShadow: 'none', width: '100%' }}
+                      className="ms-0 product-img-marco"
+                    />
                   </div>
                   {gallery[activeIdx].descripcion && (
                     <div className="text-start mt-2">
