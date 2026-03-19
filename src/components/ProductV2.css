@@ -24,15 +24,23 @@
   justify-content: center;
 }
 .navbar-logo {
-  height: 36px;
-  max-width: 180px;
+  height: 50px;
+  max-width: 248px;
   object-fit: contain;
   border: none !important;
   box-shadow: none !important;
   filter: none !important;
 }
 .navbar-links {
-  gap: 6px;
+  gap: 5.4px;
+}
+@media (min-width: 576px) {
+  .navbar-links {
+    gap: 5.4px !important;
+  }
+  .navbar-link:not(:last-child) {
+    margin-right: 5.4px !important;
+  }
 }
 @media (min-width: 576px) {
   .navbar-links {
@@ -56,8 +64,8 @@
 }
 @media (max-width: 576px) {
   .navbar-logo {
-    height: 28px !important;
-    max-width: 120px !important;
+    height: 35px !important;
+    max-width: 150px !important;
   }
   .navbar-inner {
     padding-left: 6px !important;
